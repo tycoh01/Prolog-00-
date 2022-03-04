@@ -20,12 +20,8 @@
         bubblesort(List,SortList).
     bubblesort(SortList,SortList). %OOsame as line 5  
 /*
-Primarily, you appear to be using SWISH as your interpreter of choice, w
-hich locks away a number of input/output methods (including tab/1, write/2,
-get_single_char/1, put/1, etc.), so you will be unable to use them. 
- 
- 
- */
+Primarily, you appear to be using SWISH as your interpreter of choice, which locks away a number of input/output methods (including tab/1, write/2,get_single_char/1, put/1, etc.), so you will be unable to use them. 
+*/
  
 bub1Sort([],[]) :- !. %stop condition
 bub1Sort([H],[H]) :- !. %stop condition
