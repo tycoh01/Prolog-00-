@@ -27,7 +27,7 @@ bub1Sort([],[]) :- !. %stop condition
 bub1Sort([H],[H]) :- !. %stop condition
 bub1Sort(L,SL) :- append(L1, [H1,H2|L2], L), H2 < H1, append(L1, [H2,H1|L2], NL), !,
                  bub1Sort(NL,SL). %iteration condition::if H1< H2 then fail
-bub1Sort(L,L). %weird
+bub1Sort(L,L). %weird::L[bubbleSort]L
 
 %一、L1以及swap_three，他的goal導出NL`,
 %NL滿足append與H2<H1
