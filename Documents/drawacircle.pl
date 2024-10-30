@@ -51,11 +51,11 @@ display_canvas(Canvas) :-
 % 初始化並顯示 Canvas
 start :-
     create_canvas(Canvas), % 創建空白的 Canvas
-    draw_circle(Canvas, 10, 10, 5, Points, UpdatedCanvas), % 在 Canvas 上繪製圓形並推斷 Points
+    draw_circle(Canvas, 10, 10, 5, _, UpdatedCanvas), % 在 Canvas 上繪製圓形並推斷 Points
     display_canvas(UpdatedCanvas). % 顯示 Canvas
 
 % 定義計算機的能力與 Canvas 繪圖的關係
 can_draw_circle(computer, Canvas) :-
     can_read_logic(computer), % 確認計算機可以讀取邏輯
-    draw_circle(Canvas, 10, 10, 5, Points, _). % 認可計算機能夠在 Canvas 上繪製圓形
+    draw_circle(Canvas, 10, 10, 5, _, _). % 認可計算機能夠在 Canvas 上繪製圓形
 
