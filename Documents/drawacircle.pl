@@ -31,10 +31,10 @@ rad(N, Radian) :- Radian is N * pi / 180.
 % 將計算出的點放在 Canvas 上
 place_points(Canvas, [], Canvas). % 如果沒有點，返回原 Canvas
 place_points(Canvas, [(X, Y)|Points], UpdatedCanvas) :-
-    Y1 is Y + 1, % 調整 Y 軸
-    nth1(Y1, Canvas, Row), % 找到第 Y 行
+    %Y1 is Y + 1, % 調整 Y 軸
+    nth1(Y, Canvas, Row), % 找到第 Y 行
     replace(Row, X, 'O', NewRow), % 在該位置放置 'O'
-    replace(Canvas, Y1, NewRow, TempCanvas), % 更新 Canvas
+    replace(Canvas, Y, NewRow, TempCanvas), % 更新 Canvas
     place_points(TempCanvas, Points, UpdatedCanvas). % 繼續放置其他點
 
 replace([_|T], 1, New, [New|T]). % 替換第一個元素
